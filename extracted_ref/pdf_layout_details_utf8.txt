@@ -1,0 +1,336 @@
+====================================
+Inspecting: c:\Users\bhanu\Downloads\SHIFT_IDF_B_TNR9.pdf
+--- Page 1 (w=595.4400024414062, h=841.6799926757812) ---
+[66.4] font=Calibri,Bold, sz=13.9, col=#365f91: ©VIT IPR&TTCELL  
+[116.5] font=Times New Roman, sz=12.0, col=#000000:                                  Invention 
+[130.2] font=Times New Roman, sz=12.0, col=#000000: Disclosure Format (IDF)-B    
+[93.4] font=Arial, sz=7.9, col=#000000: Document No.  
+[93.4] font=Arial, sz=7.9, col=#000000: 02-IPR-R003  
+[118.4] font=Arial, sz=7.9, col=#000000: Issue No/Date  
+[118.4] font=Arial, sz=7.9, col=#000000: 2/01.02.2024  
+[139.5] font=Arial, sz=7.9, col=#000000: Amd. No/Date  
+[139.5] font=Arial, sz=7.9, col=#000000: 0/00.00.0000  
+[177.0] font=Times New Roman,Bold, sz=9.1, col=#000000: 1. Title of the invention: 
+[190.4] font=Times New Roman, sz=9.1, col=#000000: SHIFT – Secure Heuristic Input Fatigue Tracker: An On-Premise Kinemati
+[205.3] font=Times New Roman,Bold, sz=9.1, col=#000000: 2. Field /Area of invention: 
+[218.7] font=Times New Roman, sz=9.1, col=#000000: Human Computer Interaction (HCI), typing behaviour analysis, privacy p
+[229.1] font=Times New Roman, sz=9.1, col=#000000: applications. 
+[243.9] font=Times New Roman,Bold, sz=9.1, col=#000000: 3. Prior Patents and Publications from literature (provide a table sum
+[258.2] font=Times New Roman,Bold, sz=7.9, col=#000000: Prior art 
+[258.2] font=Times New Roman,Bold, sz=7.9, col=#000000: Main idea 
+[258.2] font=Times New Roman,Bold, sz=7.9, col=#000000: Difference / gap 
+[274.3] font=Times New Roman, sz=7.9, col=#000000: EP2477136A1 
+[269.7] font=Times New Roman, sz=7.9, col=#000000: Keystroke timing and typing features for 
+[278.9] font=Times New Roman, sz=7.9, col=#000000: continuous user verification. 
+[269.7] font=Times New Roman, sz=7.9, col=#000000: SHIFT is not for authentication; it studies typing 
+[278.9] font=Times New Roman, sz=7.9, col=#000000: bottlenecks locally. 
+[297.1] font=Times New Roman, sz=7.9, col=#000000: US20130243208A1 
+[292.5] font=Times New Roman, sz=7.9, col=#000000: Keyboard/input performance used for alertness 
+[301.7] font=Times New Roman, sz=7.9, col=#000000: monitoring. 
+[292.5] font=Times New Roman, sz=7.9, col=#000000: SHIFT also uses physical key distance and a 
+[301.7] font=Times New Roman, sz=7.9, col=#000000: personal latency baseline. 
+[320.2] font=Times New Roman, sz=7.9, col=#000000: US20110227831A1 
+[315.6] font=Times New Roman, sz=7.9, col=#000000: Keystroke timing/pressure used for finger-related 
+[324.7] font=Times New Roman, sz=7.9, col=#000000: inference. 
+[315.6] font=Times New Roman, sz=7.9, col=#000000: SHIFT combines timing, key distance, clustering 
+[324.7] font=Times New Roman, sz=7.9, col=#000000: and heatmap analysis. 
+[343.0] font=Times New Roman, sz=7.9, col=#000000: US20230111812A1 
+[338.4] font=Times New Roman, sz=7.9, col=#000000: Typing profiles based on transition timing and 
+[347.5] font=Times New Roman, sz=7.9, col=#000000: context. 
+[338.4] font=Times New Roman, sz=7.9, col=#000000: SHIFT does not try to identify the user and keeps 
+[347.5] font=Times New Roman, sz=7.9, col=#000000: the data on the device. 
+[363.7] font=Times New Roman,Bold, sz=9.1, col=#000000: 4. Summary and background of the invention  
+[377.2] font=Times New Roman, sz=9.1, col=#000000: SHIFT is a Windows based application which runs in the background whil
+[387.5] font=Times New Roman, sz=9.1, col=#000000: how a person types without forcing them to take a separate typing test
+[397.8] font=Times New Roman, sz=9.1, col=#000000: the time between two key presses and the physical distance between the
+[408.2] font=Times New Roman, sz=9.1, col=#000000: mechanical slowdowns. 
+[421.6] font=Times New Roman, sz=9.1, col=#000000: The system first checks the active window using the privacy layer. Sen
+[431.9] font=Times New Roman, sz=9.1, col=#000000: window cannot be identified safely and fail  closed protection is enab
+[442.2] font=Times New Roman, sz=9.1, col=#000000: physical key identifiers and used for kinematic analysis. Long gaps ab
+[455.4] font=Times New Roman, sz=9.1, col=#000000: A personal baseline is calculated from the user's own transition data.
+[466.0] font=Times New Roman, sz=9.1, col=#000000: latency patterns. K Means clustering is then used to group transition 
+[476.3] font=Times New Roman, sz=9.1, col=#000000: from a normal typing test is that the analysis is done during normal c
+[486.7] font=Times New Roman, sz=9.1, col=#000000: sentence. 
+[501.3] font=Times New Roman,Bold, sz=9.1, col=#000000: 5. Objectives of Invention 
+[515.2] font=Times New Roman, sz=9.1, col=#000000: • To analyse natural typing behaviour without requiring a separate typ
+[527.9] font=Times New Roman, sz=9.1, col=#000000: • To use key timing and physical keyboard information without retainin
+[540.9] font=Times New Roman, sz=9.1, col=#000000: • To create a personal latency baseline and identify unusually slow ke
+[553.9] font=Times New Roman, sz=9.1, col=#000000: • To separate long pauses from normal key to key latency and group tra
+[566.8] font=Times New Roman, sz=9.1, col=#000000: • To generate a keyboard heatmap and keep processing and storage on th
+[582.7] font=Times New Roman,Bold, sz=9.1, col=#000000: 6. Working principle of the invention: 
+[596.4] font=Times New Roman, sz=9.1, col=#000000: Keyboard event → privacy/context check → physical-key mapping → timing
+[606.7] font=Times New Roman, sz=9.1, col=#000000: SQLite storage → personal baseline → high-latency detection → K-Means 
+[617.0] font=Times New Roman, sz=9.1, col=#000000: SHIFT calculates the time difference, physical keyboard distance and v
+[627.3] font=Times New Roman, sz=9.1, col=#000000: while navigation and editing keys can break the kinematic sequence. 
+[642.2] font=Times New Roman,Bold, sz=9.1, col=#000000: 7. Description of the invention in detail  
+[655.6] font=Times New Roman, sz=9.1, col=#000000: The prototype is implemented as a Python/PySide6 Windows application. 
+[666.0] font=Times New Roman, sz=9.1, col=#000000: through the privacy layer before they reach the analysis layer. The pr
+[676.3] font=Times New Roman, sz=9.1, col=#000000: sensitive patterns. The application can also exclude its own window an
+[689.7] font=Times New Roman, sz=9.1, col=#000000: The kinematic layer works with core typing keys such as letters, digit
+[700.1] font=Times New Roman, sz=9.1, col=#000000: positions to calculate Euclidean distance between two keys. The time b
+[710.4] font=Times New Roman, sz=9.1, col=#000000: proxy is calculated from physical distance divided by the time in seco
+[720.7] font=Times New Roman, sz=9.1, col=#000000: auto repeat. 
+[734.1] font=Times New Roman, sz=9.1, col=#000000: Gaps above 2 seconds are not used as normal mechanical transitions. Th
+[744.5] font=Times New Roman, sz=9.1, col=#000000: Session grouping is controlled separately through the session timeout 
+[757.7] font=Times New Roman, sz=9.1, col=#000000: The storage layer uses SQLite and stores aggregate statistics and norm
+[768.3] font=Times New Roman, sz=9.1, col=#000000: text; the privacy layer uses a one way hash for the title. The researc
+[778.6] font=Times New Roman, sz=9.1, col=#000000: deterministic K-Means clustering and identifies high latency transitio
+[788.9] font=Times New Roman, sz=9.1, col=#000000: key and scales the values from 0 to 1. 
+[IMG] bbox=(61.900001525878906, 107.40000915527344, 163.95001220703125, 138.70001220703125), w=274, h=88
+--- Page 2 (w=595.4400024414062, h=841.6799926757812) ---
+[39.7] font=Times New Roman, sz=9.1, col=#000000: Latest observed results from the running prototype: 1,500 total transi
+[50.0] font=Times New Roman, sz=9.1, col=#000000: 17.89 average velocity proxy. The kinematic analysis shows 1,478 trans
+[60.3] font=Times New Roman, sz=9.1, col=#000000: and 24 high latency patterns. Two K-Means clusters are shown in the cu
+[481.6] font=Times New Roman,Bold, sz=9.1, col=#000000: 8. Experimental validation results: 
+[495.1] font=Times New Roman, sz=9.1, col=#000000: The final automated test run was performed using the project's Python 
+[505.4] font=Times New Roman, sz=9.1, col=#000000: pytest was used from the SHIFT project folder. The result was 258 pass
+[518.8] font=Times New Roman, sz=9.1, col=#000000: Manual testing was also carried out on the Windows application. The Da
+[529.1] font=Times New Roman, sz=9.1, col=#000000: Privacy and Settings pages were checked. The latest dashboard showed 1
+[539.5] font=Times New Roman, sz=9.1, col=#000000: Insights page showed a 2.1% correction rate and 27 total corrections. 
+[549.8] font=Times New Roman, sz=9.1, col=#000000: raw text exclusion and fail closed protection. 
+[564.7] font=Times New Roman,Bold, sz=9.1, col=#000000: 9. What aspects of the invention needs protection? 
+[578.4] font=Times New Roman, sz=9.1, col=#000000: • The local method of collecting keyboard timing and physical key dist
+[591.3] font=Times New Roman, sz=9.1, col=#000000: • The privacy first event flow where active window checks happen befor
+[604.3] font=Times New Roman, sz=9.1, col=#000000: • The use of a personal latency baseline together with high latency tr
+[617.0] font=Times New Roman, sz=9.1, col=#000000: • The combination of pause aware kinematic analysis, K-Means clusterin
+[630.0] font=Times New Roman, sz=9.1, col=#000000: • The local storage and processing design in which window titles are n
+[668.5] font=Calibri,Bold, sz=13.9, col=#365f91: ©VIT IPR&TTCELL  
+[718.6] font=Times New Roman, sz=12.0, col=#000000:                                  Invention 
+[732.1] font=Times New Roman, sz=12.0, col=#000000: Disclosure Format (IDF)-B    
+[695.5] font=Arial, sz=7.9, col=#000000: Document No.  
+[695.5] font=Arial, sz=7.9, col=#000000: 02-IPR-R003  
+[720.5] font=Arial, sz=7.9, col=#000000: Issue No/Date  
+[720.5] font=Arial, sz=7.9, col=#000000: 2/01.02.2024  
+[741.6] font=Arial, sz=7.9, col=#000000: Amd. No/Date  
+[741.6] font=Arial, sz=7.9, col=#000000: 0/00.00.0000  
+[IMG] bbox=(43.20000076293945, 111.0, 552.25, 450.3500061035156), w=1536, h=1024
+[IMG] bbox=(61.900001525878906, 709.25, 163.95001220703125, 740.5499877929688), w=274, h=88
+--- Page 3 (w=595.4400024414062, h=841.6799926757812) ---
+[56.0] font=Times New Roman,Bold, sz=9.1, col=#000000: 10. What is Technology readiness level of your invention?  
+[95.3] font=Times New Roman, sz=9.1, col=#000000: Research  
+[95.3] font=Times New Roman, sz=9.1, col=#000000: Development   
+[95.3] font=Times New Roman, sz=9.1, col=#000000: Deployment  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 1  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 2  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 3  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 4  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 5  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 6  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 7  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 8  
+[118.4] font=Times New Roman, sz=9.1, col=#000000: TRL 9  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Basic  
+[155.8] font=Times New Roman, sz=9.1, col=#000000: Principles  
+[170.7] font=Times New Roman, sz=9.1, col=#000000: observed  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Technology 
+[151.8] font=Times New Roman, sz=9.1, col=#000000: concept 
+[162.1] font=Times New Roman, sz=9.1, col=#000000: formulated  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Experimental 
+[151.8] font=Times New Roman, sz=9.1, col=#000000: proof of 
+[162.1] font=Times New Roman, sz=9.1, col=#000000: concept  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Technology 
+[151.8] font=Times New Roman, sz=9.1, col=#000000: validated in a 
+[162.1] font=Times New Roman, sz=9.1, col=#000000: lab  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Technology  
+[155.8] font=Times New Roman, sz=9.1, col=#000000: validated in a 
+[171.4] font=Times New Roman, sz=9.1, col=#000000: relevant  
+[187.0] font=Times New Roman, sz=9.1, col=#000000: environment  
+[201.7] font=Times New Roman, sz=9.1, col=#000000: (industrially 
+[217.3] font=Times New Roman, sz=9.1, col=#000000: relevant in  
+[232.4] font=Times New Roman, sz=9.1, col=#000000: case of key 
+[243.0] font=Times New Roman, sz=9.1, col=#000000: enabling 
+[253.3] font=Times New Roman, sz=9.1, col=#000000: technologies)  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Technology 
+[156.8] font=Times New Roman, sz=9.1, col=#000000: demonstrated 
+[172.2] font=Times New Roman, sz=9.1, col=#000000: in a relevant  
+[187.8] font=Times New Roman, sz=9.1, col=#000000: environment  
+[202.4] font=Times New Roman, sz=9.1, col=#000000: (industrially 
+[218.0] font=Times New Roman, sz=9.1, col=#000000: relevant in  
+[233.1] font=Times New Roman, sz=9.1, col=#000000: case of key 
+[243.5] font=Times New Roman, sz=9.1, col=#000000: enabling 
+[254.0] font=Times New Roman, sz=9.1, col=#000000: technologies)  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: System 
+[156.8] font=Times New Roman, sz=9.1, col=#000000: prototype  
+[172.2] font=Times New Roman, sz=9.1, col=#000000: demonstration in 
+[187.5] font=Times New Roman, sz=9.1, col=#000000: an  
+[202.9] font=Times New Roman, sz=9.1, col=#000000: operational 
+[213.2] font=Times New Roman, sz=9.1, col=#000000: environment  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: System 
+[151.8] font=Times New Roman, sz=9.1, col=#000000: complete 
+[162.1] font=Times New Roman, sz=9.1, col=#000000: and 
+[172.4] font=Times New Roman, sz=9.1, col=#000000: qualified  
+[141.4] font=Times New Roman, sz=9.1, col=#000000: Actual system 
+[156.8] font=Times New Roman, sz=9.1, col=#000000: proven in an 
+[172.2] font=Times New Roman, sz=9.1, col=#000000: operational  
+[187.8] font=Times New Roman, sz=9.1, col=#000000: environment  
+[202.4] font=Times New Roman, sz=9.1, col=#000000: (competitive 
+[218.0] font=Times New Roman, sz=9.1, col=#000000: manufacturing  
+[233.4] font=Times New Roman, sz=9.1, col=#000000: in case of key 
+[249.0] font=Times New Roman, sz=9.1, col=#000000: enabling  
+[264.1] font=Times New Roman, sz=9.1, col=#000000: technologies, or 
+[274.4] font=Times New Roman, sz=9.1, col=#000000: in space )  
+[318.8] font=Segoe UI Symbol, sz=18.0, col=#000000: ✓  
+[388.8] font=Times New Roman, sz=7.9, col=#000000: ----------------------END OF THE DOCUMENT-----------------------------
+====================================
+Inspecting: c:\Users\bhanu\Downloads\SHIFT_Experimental_Validation.pdf
+--- Page 1 (w=612.0, h=792.0) ---
+[46.9] font=Arial,Bold, sz=13.0, col=#342fb4: VIT IPR&TTCELL 
+[69.4] font=Arial,Bold, sz=19.9, col=#000000: EXPERIMENTAL VALIDATION & RESULTS 
+[100.3] font=Arial,Bold, sz=12.0, col=#000000: SHIFT – Secure Heuristic Input Fatigue Tracker 
+[121.2] font=Arial, sz=9.6, col=#000000: SHIVA SANTHOSH JILLA (24BAI0116)  |  VIVEK VARDHAN (24BAI0172)  |  Nag
+[161.3] font=Calibri,Bold, sz=16.1, col=#342fb4: 1. Purpose of testing 
+[180.3] font=Arial, sz=10.6, col=#000000: The purpose of testing was to check whether the complete SHIFT applica
+[194.3] font=Arial, sz=10.6, col=#000000: prototype and whether the main privacy, session, storage and kinematic
+[208.2] font=Arial, sz=10.6, col=#000000: Testing included automated unit/regression tests as well as manual che
+[249.4] font=Calibri,Bold, sz=16.1, col=#342fb4: 2. Final automated test result 
+[268.7] font=Arial, sz=10.6, col=#000000: The final automated test run was performed from the project folder usi
+[282.4] font=Arial, sz=10.6, col=#000000: project virtual environment. The complete pytest suite finished with: 
+[301.4] font=Arial,Bold, sz=16.1, col=#342fb4: 258 PASSED  |  0 FAILED  |  5.47 seconds 
+[440.2] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 1. Final pytest result showing 258 passed in 5.47s. 
+[479.6] font=Calibri,Bold, sz=16.1, col=#342fb4: 3. Manual feature validation 
+[499.0] font=Arial,Bold, sz=9.1, col=#000000: Feature 
+[499.0] font=Arial,Bold, sz=9.1, col=#000000: What was checked 
+[499.0] font=Arial,Bold, sz=9.1, col=#000000: Result 
+[520.0] font=Arial, sz=7.9, col=#000000: Application launch 
+[515.2] font=Arial, sz=7.9, col=#000000: SHIFT opened normally and the main GUI 
+[524.6] font=Arial, sz=7.9, col=#000000: was usable. 
+[520.0] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[543.8] font=Arial, sz=7.9, col=#000000: Monitoring 
+[539.2] font=Arial, sz=7.9, col=#000000: Start monitoring and paused state were 
+[548.4] font=Arial, sz=7.9, col=#000000: checked. 
+[543.8] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[567.8] font=Arial, sz=7.9, col=#000000: Dashboard 
+[563.2] font=Arial, sz=7.9, col=#000000: Typing statistics, trend chart and recent 
+[572.4] font=Arial, sz=7.9, col=#000000: activity were displayed. 
+[567.8] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[591.6] font=Arial, sz=7.9, col=#000000: Sessions 
+[587.0] font=Arial, sz=7.9, col=#000000: Session history, stored statistics and session 
+[596.1] font=Arial, sz=7.9, col=#000000: grouping were checked. 
+[591.6] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[615.6] font=Arial, sz=7.9, col=#000000: Insights 
+[611.0] font=Arial, sz=7.9, col=#000000: Correction rate, corrected keys and 
+[620.1] font=Arial, sz=7.9, col=#000000: Backspace patterns were displayed. 
+[615.6] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[639.3] font=Arial, sz=7.9, col=#000000: Kinematic Performance 
+[634.8] font=Arial, sz=7.9, col=#000000: Transition count, time, distance and velocity 
+[644.1] font=Arial, sz=7.9, col=#000000: values were displayed. 
+[639.3] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[663.3] font=Arial, sz=7.9, col=#000000: Kinematic Analysis 
+[658.8] font=Arial, sz=7.9, col=#000000: Latency, personal baseline and high-latency 
+[667.9] font=Arial, sz=7.9, col=#000000: patterns were displayed. 
+[663.3] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[687.3] font=Arial, sz=7.9, col=#000000: K-Means 
+[682.5] font=Arial, sz=7.9, col=#000000: Two clusters were shown in the current 
+[691.9] font=Arial, sz=7.9, col=#000000: analysis. 
+[687.3] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[711.1] font=Arial, sz=7.9, col=#000000: Keyboard heatmap 
+[706.6] font=Arial, sz=7.9, col=#000000: The keyboard heatmap was rendered from 
+[715.7] font=Arial, sz=7.9, col=#000000: the analysis data. 
+[711.1] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[730.6] font=Arial, sz=7.9, col=#000000: Privacy 
+[733.0] font=Arial, sz=7.9, col=#000000: Local processing, exclusions and fail-closed 
+[730.6] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[IMG] bbox=(61.20000076293945, 327.3800048828125, 550.5900268554688, 433.3800048828125), w=1359, h=294
+--- Page 2 (w=612.0, h=792.0) ---
+[47.6] font=Arial, sz=7.9, col=#000000: protection were visible and checked. 
+[71.6] font=Arial, sz=7.9, col=#000000: Settings 
+[62.2] font=Arial, sz=7.9, col=#000000: Monitoring, 33-second session timeout, 200 
+[71.6] font=Arial, sz=7.9, col=#000000: buffer size and 30-day retention were 
+[80.7] font=Arial, sz=7.9, col=#000000: shown. 
+[71.6] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[99.9] font=Arial, sz=7.9, col=#000000: SQLite persistence 
+[95.3] font=Arial, sz=7.9, col=#000000: Final persistence verification reported 9 
+[104.7] font=Arial, sz=7.9, col=#000000: sessions, 1,753 keys and 1,292 characters.  
+[99.9] font=Arial,Bold, sz=7.9, col=#000000: PASS 
+[146.4] font=Calibri,Bold, sz=16.1, col=#342fb4: 4. Latest application results 
+[165.5] font=Arial, sz=10.6, col=#000000: The following values are taken from the latest screenshots supplied fo
+[179.4] font=Arial, sz=10.6, col=#000000: They are shown as the observed UI results from this test run. 
+[198.7] font=Arial,Bold, sz=9.1, col=#000000: Screen / metric 
+[198.7] font=Arial,Bold, sz=9.1, col=#000000: Latest observed value 
+[214.7] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – sessions 
+[214.9] font=Arial, sz=8.4, col=#000000: 9 
+[230.1] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – keys 
+[230.3] font=Arial, sz=8.4, col=#000000: 1,753 
+[245.2] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – characters 
+[245.4] font=Arial, sz=8.4, col=#000000: 1,292 
+[260.5] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – accuracy 
+[260.8] font=Arial, sz=8.4, col=#000000: 90.8% 
+[275.9] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – corrections 
+[276.1] font=Arial, sz=8.4, col=#000000: 119 
+[291.1] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – speed shown in key timing section 
+[291.3] font=Arial, sz=8.4, col=#000000: 23.9 WPM 
+[306.4] font=Arial,Bold, sz=8.4, col=#000000: Dashboard – net speed after corrections 
+[306.7] font=Arial, sz=8.4, col=#000000: 21.7 WPM 
+[321.8] font=Arial,Bold, sz=8.4, col=#000000: Insights – correction rate 
+[322.0] font=Arial, sz=8.4, col=#000000: 2.1% 
+[336.9] font=Arial,Bold, sz=8.4, col=#000000: Insights – total corrections 
+[337.1] font=Arial, sz=8.4, col=#000000: 27 
+[352.3] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Performance – total transitions 
+[352.5] font=Arial, sz=8.4, col=#000000: 1,500 
+[367.4] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Performance – average transition time 
+[367.6] font=Arial, sz=8.4, col=#000000: 280.5 ms 
+[382.8] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Performance – average key distance 
+[383.0] font=Arial, sz=8.4, col=#000000: 3.38 
+[398.1] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Performance – average velocity proxy 
+[398.4] font=Arial, sz=8.4, col=#000000: 17.89 
+[413.2] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Analysis – transitions analysed 
+[413.5] font=Arial, sz=8.4, col=#000000: 1,478 
+[428.6] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Analysis – average latency 
+[428.8] font=Arial, sz=8.4, col=#000000: 279 ms 
+[444.0] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Analysis – personal baseline 
+[444.2] font=Arial, sz=8.4, col=#000000: 363 ms 
+[459.1] font=Arial,Bold, sz=8.4, col=#000000: Kinematic Analysis – high-latency patterns 
+[459.3] font=Arial, sz=8.4, col=#000000: 24 
+[474.5] font=Arial,Bold, sz=8.4, col=#000000: K-Means – clusters shown 
+[474.7] font=Arial, sz=8.4, col=#000000: 2 
+[489.8] font=Arial,Bold, sz=8.4, col=#000000: K-Means – Cluster 1 
+[490.1] font=Arial, sz=8.4, col=#000000: 140 transitions, about 358 ms, distance 5.19 
+[504.9] font=Arial,Bold, sz=8.4, col=#000000: K-Means – Cluster 2 
+[505.2] font=Arial, sz=8.4, col=#000000: 175 transitions, about 274 ms, distance 1.97 
+--- Page 3 (w=612.0, h=792.0) ---
+[50.1] font=Calibri,Bold, sz=16.1, col=#342fb4: 5. Dashboard and session results 
+[351.1] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 2. Latest Dashboard screen. 
+[650.3] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 3. Latest Sessions screen. 
+[IMG] bbox=(61.20000076293945, 69.3599853515625, 550.77001953125, 344.30999755859375), w=1359, h=764
+[IMG] bbox=(61.20000076293945, 368.02001953125, 550.760009765625, 643.3200073242188), w=1359, h=764
+--- Page 4 (w=612.0, h=792.0) ---
+[50.1] font=Calibri,Bold, sz=16.1, col=#342fb4: 6. Insights and kinematic performance 
+[351.4] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 4. Latest Insights screen. 
+[647.1] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 5. Latest Kinematic Performance screen. 
+[IMG] bbox=(61.20000076293945, 69.3599853515625, 550.760009765625, 344.55999755859375), w=1359, h=764
+[IMG] bbox=(61.20000076293945, 368.27001953125, 550.7999877929688, 640.27001953125), w=1359, h=755
+--- Page 5 (w=612.0, h=792.0) ---
+[50.1] font=Calibri,Bold, sz=16.1, col=#342fb4: 7. Kinematic analysis, clustering and heatmap 
+[268.5] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 6. Latest Kinematic Analysis screen. 
+[549.9] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 7. Latest keyboard heatmap. 
+[IMG] bbox=(61.20000076293945, 69.3599853515625, 550.7000122070312, 261.71002197265625), w=1359, h=534
+[IMG] bbox=(61.20000076293945, 285.4200134277344, 550.7899780273438, 543.0700073242188), w=1359, h=715
+--- Page 6 (w=612.0, h=792.0) ---
+[50.1] font=Calibri,Bold, sz=16.1, col=#342fb4: 8. Privacy and settings validation 
+[351.4] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 8. Privacy screen – local processing and fail-closed controls. 
+[508.1] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 9. Privacy screen – sensitive-window exclusions. 
+[IMG] bbox=(61.20000076293945, 69.3599853515625, 550.760009765625, 344.55999755859375), w=1359, h=764
+[IMG] bbox=(61.20000076293945, 368.2699890136719, 550.6799926757812, 501.3699951171875), w=1359, h=369
+--- Page 7 (w=612.0, h=792.0) ---
+[328.8] font=Arial,Italic, sz=9.1, col=#5a5a5a: Figure 10. Settings screen with 33-second session timeout. 
+[368.2] font=Calibri,Bold, sz=16.1, col=#342fb4: 9. Interpretation of the results 
+[387.5] font=Arial, sz=10.6, col=#000000: The testing shows that SHIFT is working as a complete prototype and no
+[401.2] font=Arial, sz=10.6, col=#000000: application can collect keyboard events, apply privacy checks, group t
+[415.1] font=Arial, sz=10.6, col=#000000: statistics in SQLite and show kinematic results through the GUI. The c
+[429.0] font=Arial, sz=10.6, col=#000000: the system can calculate transition time, physical distance and a velo
+[448.0] font=Arial, sz=10.6, col=#000000: The personal baseline in the latest analysis is 363 ms, while the aver
+[461.9] font=Arial, sz=10.6, col=#000000: reports 24 high-latency patterns, meaning those transitions are above 
+[475.9] font=Arial, sz=10.6, col=#000000: analysis. The K-Means summary divides the analysed transition data int
+[489.5] font=Arial, sz=10.6, col=#000000: timing and distance. 
+[508.5] font=Arial, sz=10.6, col=#000000: The privacy screen confirms that processing is local, there are no clo
+[522.4] font=Arial, sz=10.6, col=#000000: typed content is not stored. The application also provides fail-closed
+[536.4] font=Arial, sz=10.6, col=#000000: These features are important because the project deals with keyboard b
+[550.3] font=Arial, sz=10.6, col=#000000: normal work. 
+[591.2] font=Calibri,Bold, sz=16.1, col=#342fb4: 10. Final conclusion 
+[610.5] font=Arial, sz=10.6, col=#000000: Based on the automated and manual tests, the main functions of SHIFT w
+[624.5] font=Arial, sz=10.6, col=#000000: regression suite passed 258 tests with no failures. The latest UI run 
+[638.4] font=Arial, sz=10.6, col=#000000: session, insight, kinematic, K-Means, heatmap, privacy and settings vi
+[652.3] font=Arial, sz=10.6, col=#000000: confirmed that the application can retain its aggregate session data l
+[671.0] font=Arial, sz=10.6, col=#000000: The screenshots in this report are the latest evidence supplied for th
+[685.0] font=Arial, sz=10.6, col=#000000: test screenshot is included separately because it gives the clearest p
+[IMG] bbox=(61.20000076293945, 46.800018310546875, 550.760009765625, 322.1000061035156), w=1359, h=764

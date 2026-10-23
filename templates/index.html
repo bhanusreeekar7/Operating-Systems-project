@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictiveGuard — AI Predictive Failure Detection</title>
+    <meta name="description" content="An AI-Based System for Predictive Failure Detection and Autonomous Recovery Using Intelligent Multi-Source Log Analytics">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- ── Sidebar Navigation ─────────────────────────────────────── -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            </div>
+            <span class="brand-text">PredictiveGuard</span>
+        </div>
+
+        <div class="sidebar-nav">
+            <button class="nav-item active" data-section="dashboard" id="nav-dashboard">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Dashboard</span>
+            </button>
+            <button class="nav-item" data-section="logs" id="nav-logs">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Log Viewer</span>
+            </button>
+            <button class="nav-item" data-section="anomalies" id="nav-anomalies">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span>Anomalies</span>
+            </button>
+            <button class="nav-item" data-section="predictions" id="nav-predictions">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Predictions</span>
+            </button>
+            <button class="nav-item" data-section="recovery" id="nav-recovery">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                <span>Recovery</span>
+            </button>
+            <button class="nav-item" data-section="timeline" id="nav-timeline">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/></svg>
+                <span>Timeline</span>
+            </button>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-footer-text">AI Log Analytics</div>
+            <div class="sidebar-footer-version">v1.0</div>
+        </div>
+    </nav>
+
+    <!-- ── Mobile Top Bar ─────────────────────────────────────────── -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+    <!-- ── Main Content ───────────────────────────────────────────── -->
+    <main class="main-content" id="main-content">
+
+        <!-- ── Top Bar ──────────────────────────────────────────── -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title" id="page-title">Dashboard</h1>
+                <span class="page-subtitle">Real-time system monitoring & AI-powered failure detection</span>
+            </div>
+            <div class="topbar-right">
+                <!-- Alert Bell -->
+                <button class="alert-bell" id="alert-bell" aria-label="Alerts">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span class="alert-badge" id="alert-badge">0</span>
+                </button>
+                <!-- Alert Dropdown -->
+                <div class="alert-dropdown" id="alert-dropdown">
+                    <div class="alert-dropdown-header">
+                        <span>Alerts</span>
+                        <button class="btn-ghost" id="mark-all-read">Mark all read</button>
+                    </div>
+                    <div class="alert-dropdown-list" id="alert-dropdown-list">
+                        <div class="alert-dropdown-empty">No alerts yet</div>
+                    </div>
+                </div>
+
+                <div class="status-indicator" id="system-status">
+                    <div class="status-dot pulse" id="status-dot"></div>
+                    <span id="status-text">Starting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- SECTION: Dashboard                                        -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <section class="section active" id="section-dashboard">
+
+            <!-- Health Gauge + Stats Row -->
+            <div class="dashboard-hero">
+                <div class="health-gauge-card glass-card">
+                    <div class="gauge-wrapper">
+                        <svg class="gauge-svg" viewBox="0 0 120 120">
+                            <circle class="gauge-bg" cx="60" cy="60" r="52" />
+                            <circle class="gauge-fill" id="gauge-fill" cx="60" cy="60" r="52" />
+                        </svg>
+                        <div class="gauge-label">
+                            <span class="gauge-value" id="gauge-value">--</span>
+                            <span class="gauge-unit">Health</span>
+                        </div>
+                    </div>
+                    <div class="gauge-meta">
+                        <span class="gauge-status" id="gauge-status">Initializing...</span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card glass-card" id="stat-card-logs">
+                        <div class="stat-icon stat-icon-blue">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="stat-total-logs">0</div>
+                            <div class="stat-label">Total Logs</div>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card" id="stat-card-anomalies">
+                        <div class="stat-icon stat-icon-amber">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="stat-active-anomalies">0</div>
+                            <div class="stat-label">Anomalies</div>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card" id="stat-card-predictions">
+                        <div class="stat-icon stat-icon-purple">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="stat-predictions">0</div>
+                            <div class="stat-label">Predictions</div>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card" id="stat-card-recoveries">
+                        <div class="stat-icon stat-icon-green">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="stat-recoveries">0</div>
+                            <div class="stat-label">Recoveries</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="section-title">System Metrics</div>
+            <div class="charts-grid">
+                <div class="chart-card glass-card">
+                    <div class="chart-header"><span class="chart-dot dot-blue"></span>CPU Usage</div>
+                    <div class="chart-body"><canvas id="cpu-chart"></canvas></div>
+                </div>
+                <div class="chart-card glass-card">
+                    <div class="chart-header"><span class="chart-dot dot-amber"></span>Memory Usage</div>
+                    <div class="chart-body"><canvas id="memory-chart"></canvas></div>
+                </div>
+                <div class="chart-card glass-card">
+                    <div class="chart-header"><span class="chart-dot dot-green"></span>Disk Usage</div>
+                    <div class="chart-body"><canvas id="disk-chart"></canvas></div>
+                </div>
+                <div class="chart-card glass-card">
+                    <div class="chart-header"><span class="chart-dot dot-red"></span>Network I/O</div>
+                    <div class="chart-body"><canvas id="network-chart"></canvas></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- SECTION: Live Log Viewer                                  -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <section class="section" id="section-logs">
+            <div class="section-header-row">
+                <div class="section-title">Live Log Stream</div>
+                <div class="log-controls">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="auto-scroll-toggle" checked>
+                        <span class="toggle-switch"></span>
+                        Auto-scroll
+                    </label>
+                </div>
+            </div>
+            <div class="log-viewer glass-card" id="log-viewer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Level</th>
+                            <th>Source</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- SECTION: Anomalies                                        -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <section class="section" id="section-anomalies">
+            <div class="section-title">Detected Anomalies</div>
+            <div class="cards-list" id="anomalies-list">
+                <div class="empty-state glass-card">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <p>No anomalies detected yet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- SECTION: Predictions                                      -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <section class="section" id="section-predictions">
+            <div class="section-title">Failure Predictions</div>
+            <div class="cards-list" id="predictions-list">
+                <div class="empty-state glass-card">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <p>No predictions yet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- SECTION: Recovery                                         -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <section class="section" id="section-recovery">
+            <div class="section-title">Autonomous Recovery</div>
+
+            <!-- Manual Recovery Trigger -->
+            <div class="manual-recovery glass-card">
+                <div class="manual-recovery-header">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    <span>Manual Recovery Trigger</span>
+                </div>
+                <div class="manual-recovery-body">
+                    <select id="recovery-failure-type" class="select-input">
+                        <option value="">Select failure type...</option>
+                        <option value="disk_failure">Disk Failure</option>
+                        <option value="memory_exhaustion">Memory Exhaustion</option>
+                        <option value="cpu_overload">CPU Overload</option>
+                        <option value="service_crash">Service Crash</option>
+                        <option value="network_outage">Network Outage</option>
+                    </select>
+                    <button class="btn-primary" id="trigger-recovery-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                        Trigger Recovery
+                    </button>
+                </div>
+                <div class="recovery-feedback" id="recovery-feedback"></div>
+            </div>
+
+            <div class="section-title" style="margin-top:24px;">Recovery History</div>
+            <div class="cards-list" id="recovery-list">
+                <div class="empty-state glass-card">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                    <p>No recovery actions yet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- SECTION: Timeline                                         -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <section class="section" id="section-timeline">
+            <div class="section-title">Event Timeline</div>
+            <div class="timeline-container" id="timeline-container">
+                <div class="empty-state glass-card">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><line x1="12" y1="2" x2="12" y2="22"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/></svg>
+                    <p>No events yet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Toast Container ──────────────────────────────────── -->
+        <div class="toast-container" id="toast-container"></div>
+
+        <!-- ── Footer ───────────────────────────────────────────── -->
+        <footer class="main-footer">
+            <span>PredictiveGuard v1.0</span>
+            <span class="footer-divider">·</span>
+            <span>AI-Based Predictive Failure Detection & Autonomous Recovery</span>
+        </footer>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

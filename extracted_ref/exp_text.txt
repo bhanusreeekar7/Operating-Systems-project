@@ -1,0 +1,183 @@
+--- PAGE 1 ---
+VIT IPR&TTCELL 
+EXPERIMENTAL VALIDATION & RESULTS 
+SHIFT – Secure Heuristic Input Fatigue Tracker 
+SHIVA SANTHOSH JILLA (24BAI0116)  |  VIVEK VARDHAN (24BAI0172)  |  Nagulu Gowtham venkat Raj (24BCE0728) 
+1. Purpose of testing 
+The purpose of testing was to check whether the complete SHIFT application works as a Windows desktop 
+prototype and whether the main privacy, session, storage and kinematic-analysis features work together. 
+Testing included automated unit/regression tests as well as manual checking of the application screens. 
+2. Final automated test result 
+The final automated test run was performed from the project folder using the Python interpreter inside the 
+project virtual environment. The complete pytest suite finished with: 
+258 PASSED  |  0 FAILED  |  5.47 seconds 
+ 
+Figure 1. Final pytest result showing 258 passed in 5.47s. 
+3. Manual feature validation 
+Feature 
+What was checked 
+Result 
+Application launch 
+SHIFT opened normally and the main GUI 
+was usable. 
+PASS 
+Monitoring 
+Start monitoring and paused state were 
+checked. 
+PASS 
+Dashboard 
+Typing statistics, trend chart and recent 
+activity were displayed. 
+PASS 
+Sessions 
+Session history, stored statistics and session 
+grouping were checked. 
+PASS 
+Insights 
+Correction rate, corrected keys and 
+Backspace patterns were displayed. 
+PASS 
+Kinematic Performance 
+Transition count, time, distance and velocity 
+values were displayed. 
+PASS 
+Kinematic Analysis 
+Latency, personal baseline and high-latency 
+patterns were displayed. 
+PASS 
+K-Means 
+Two clusters were shown in the current 
+analysis. 
+PASS 
+Keyboard heatmap 
+The keyboard heatmap was rendered from 
+the analysis data. 
+PASS 
+Privacy 
+Local processing, exclusions and fail-closed 
+PASS 
+
+
+--- PAGE 2 ---
+protection were visible and checked. 
+Settings 
+Monitoring, 33-second session timeout, 200 
+buffer size and 30-day retention were 
+shown. 
+PASS 
+SQLite persistence 
+Final persistence verification reported 9 
+sessions, 1,753 keys and 1,292 characters.  
+PASS 
+4. Latest application results 
+The following values are taken from the latest screenshots supplied for the final version of the application. 
+They are shown as the observed UI results from this test run. 
+Screen / metric 
+Latest observed value 
+Dashboard – sessions 
+9 
+Dashboard – keys 
+1,753 
+Dashboard – characters 
+1,292 
+Dashboard – accuracy 
+90.8% 
+Dashboard – corrections 
+119 
+Dashboard – speed shown in key timing section 
+23.9 WPM 
+Dashboard – net speed after corrections 
+21.7 WPM 
+Insights – correction rate 
+2.1% 
+Insights – total corrections 
+27 
+Kinematic Performance – total transitions 
+1,500 
+Kinematic Performance – average transition time 
+280.5 ms 
+Kinematic Performance – average key distance 
+3.38 
+Kinematic Performance – average velocity proxy 
+17.89 
+Kinematic Analysis – transitions analysed 
+1,478 
+Kinematic Analysis – average latency 
+279 ms 
+Kinematic Analysis – personal baseline 
+363 ms 
+Kinematic Analysis – high-latency patterns 
+24 
+K-Means – clusters shown 
+2 
+K-Means – Cluster 1 
+140 transitions, about 358 ms, distance 5.19 
+K-Means – Cluster 2 
+175 transitions, about 274 ms, distance 1.97 
+ 
+ 
+
+
+--- PAGE 3 ---
+5. Dashboard and session results 
+ 
+Figure 2. Latest Dashboard screen. 
+ 
+Figure 3. Latest Sessions screen. 
+ 
+ 
+
+
+--- PAGE 4 ---
+6. Insights and kinematic performance 
+ 
+Figure 4. Latest Insights screen. 
+ 
+Figure 5. Latest Kinematic Performance screen. 
+ 
+ 
+
+
+--- PAGE 5 ---
+7. Kinematic analysis, clustering and heatmap 
+ 
+Figure 6. Latest Kinematic Analysis screen. 
+ 
+Figure 7. Latest keyboard heatmap. 
+ 
+ 
+
+
+--- PAGE 6 ---
+8. Privacy and settings validation 
+ 
+Figure 8. Privacy screen – local processing and fail-closed controls. 
+ 
+Figure 9. Privacy screen – sensitive-window exclusions. 
+
+
+--- PAGE 7 ---
+ 
+Figure 10. Settings screen with 33-second session timeout. 
+9. Interpretation of the results 
+The testing shows that SHIFT is working as a complete prototype and not only as a UI mock-up. The 
+application can collect keyboard events, apply privacy checks, group typing into sessions, store the required 
+statistics in SQLite and show kinematic results through the GUI. The current kinematic screen also shows that 
+the system can calculate transition time, physical distance and a velocity proxy from the collected events. 
+The personal baseline in the latest analysis is 363 ms, while the average latency is 279 ms. The screen 
+reports 24 high-latency patterns, meaning those transitions are above the personal threshold used by the 
+analysis. The K-Means summary divides the analysed transition data into two groups with different average 
+timing and distance. 
+The privacy screen confirms that processing is local, there are no cloud API or network uploads, and raw 
+typed content is not stored. The application also provides fail-closed protection and configurable exclusions. 
+These features are important because the project deals with keyboard behaviour while the user is doing 
+normal work. 
+10. Final conclusion 
+Based on the automated and manual tests, the main functions of SHIFT were successfully validated. The final 
+regression suite passed 258 tests with no failures. The latest UI run also produced working dashboard, 
+session, insight, kinematic, K-Means, heatmap, privacy and settings views. The final persistence check 
+confirmed that the application can retain its aggregate session data locally. 
+The screenshots in this report are the latest evidence supplied for the completed prototype. The automated 
+test screenshot is included separately because it gives the clearest proof of the regression-test result. 
+
+

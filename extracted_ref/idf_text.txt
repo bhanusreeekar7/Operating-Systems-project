@@ -1,0 +1,200 @@
+--- PAGE 1 ---
+©VIT IPR&TTCELL  
+  
+                                 Invention 
+Disclosure Format (IDF)-B    
+ 
+Document No.  
+02-IPR-R003  
+Issue No/Date  
+2/01.02.2024  
+Amd. No/Date  
+0/00.00.0000  
+  
+1. Title of the invention: 
+SHIFT – Secure Heuristic Input Fatigue Tracker: An On-Premise Kinematic Keystroke Profiling Engine 
+2. Field /Area of invention: 
+Human Computer Interaction (HCI), typing behaviour analysis, privacy preserving computing, local machine learning and Windows desktop 
+applications. 
+3. Prior Patents and Publications from literature (provide a table summarizing the prior art) 
+Prior art 
+Main idea 
+Difference / gap 
+EP2477136A1 
+Keystroke timing and typing features for 
+continuous user verification. 
+SHIFT is not for authentication; it studies typing 
+bottlenecks locally. 
+US20130243208A1 
+Keyboard/input performance used for alertness 
+monitoring. 
+SHIFT also uses physical key distance and a 
+personal latency baseline. 
+US20110227831A1 
+Keystroke timing/pressure used for finger-related 
+inference. 
+SHIFT combines timing, key distance, clustering 
+and heatmap analysis. 
+US20230111812A1 
+Typing profiles based on transition timing and 
+context. 
+SHIFT does not try to identify the user and keeps 
+the data on the device. 
+4. Summary and background of the invention  
+SHIFT is a Windows based application which runs in the background while the user is doing their normal work. The main idea is to study 
+how a person types without forcing them to take a separate typing test. Instead of storing the actual text, the system uses information such as 
+the time between two key presses and the physical distance between the keys. This helps in studying typing behaviour and possible 
+mechanical slowdowns. 
+The system first checks the active window using the privacy layer. Sensitive windows and excluded applications are skipped. If the active 
+window cannot be identified safely and fail  closed protection is enabled, the input is not collected. Valid key events are converted into 
+physical key identifiers and used for kinematic analysis. Long gaps above 2 seconds are treated as pauses for this analysis. 
+A personal baseline is calculated from the user's own transition data. Transitions that are much slower than this baseline are marked as high 
+latency patterns. K Means clustering is then used to group transition behaviour and a keyboard heatmap is produced. The main difference 
+from a normal typing test is that the analysis is done during normal computer use and the application does not need to keep the typed 
+sentence. 
+5. Objectives of Invention 
+• To analyse natural typing behaviour without requiring a separate typing test. 
+• To use key timing and physical keyboard information without retaining raw typed text. 
+• To create a personal latency baseline and identify unusually slow key transitions. 
+• To separate long pauses from normal key to key latency and group transition data using K-Means. 
+• To generate a keyboard heatmap and keep processing and storage on the local device. 
+6. Working principle of the invention: 
+Keyboard event → privacy/context check → physical-key mapping → timing and distance calculation → pause/session handling → local 
+SQLite storage → personal baseline → high-latency detection → K-Means clustering → heatmap and report. For valid typing transitions, 
+SHIFT calculates the time difference, physical keyboard distance and velocity proxy. Modifier keys are not used as transition endpoints, 
+while navigation and editing keys can break the kinematic sequence. 
+7. Description of the invention in detail  
+The prototype is implemented as a Python/PySide6 Windows application. The keyboard event layer receives key events and passes them 
+through the privacy layer before they reach the analysis layer. The privacy layer checks the active window, application and configured 
+sensitive patterns. The application can also exclude its own window and user selected applications. 
+The kinematic layer works with core typing keys such as letters, digits, punctuation and Space. It uses normalized QWERTY keyboard 
+positions to calculate Euclidean distance between two keys. The time between consecutive valid key events is stored as delta time. Velocity 
+proxy is calculated from physical distance divided by the time in seconds. Same key intervals below 80 ms are treated as operating system 
+auto repeat. 
+Gaps above 2 seconds are not used as normal mechanical transitions. This avoids treating a long break in typing as a slow key movement. 
+Session grouping is controlled separately through the session timeout setting. The latest tested UI shows a 33 second session timeout. 
+The storage layer uses SQLite and stores aggregate statistics and normalized key/transition information. Window titles are not stored as plain 
+text; the privacy layer uses a one way hash for the title. The research layer calculates the personal baseline, normalizes features, performs 
+deterministic K-Means clustering and identifies high latency transitions. The heatmap uses average latency for transitions starting from each 
+key and scales the values from 0 to 1. 
+
+
+--- PAGE 2 ---
+Latest observed results from the running prototype: 1,500 total transitions, 280.5 ms average transition time, 3.38 average key distance and 
+17.89 average velocity proxy. The kinematic analysis shows 1,478 transitions analysed, 279 ms average latency, 363 ms personal baseline 
+and 24 high latency patterns. Two K-Means clusters are shown in the current interface. 
+ 
+ 
+ 
+ 
+8. Experimental validation results: 
+The final automated test run was performed using the project's Python virtual environment. The command .\venv\Scripts\python.exe -m 
+pytest was used from the SHIFT project folder. The result was 258 passed in 5.47 seconds, with no failed tests. 
+Manual testing was also carried out on the Windows application. The Dashboard, Sessions, Insights, Kinematic Analysis, keyboard heatmap, 
+Privacy and Settings pages were checked. The latest dashboard showed 1,753 keys, 1,292 characters, 119 corrections and 9 sessions. The 
+Insights page showed a 2.1% correction rate and 27 total corrections. The Privacy page showed local processing, no cloud/network upload, 
+raw text exclusion and fail closed protection. 
+9. What aspects of the invention needs protection? 
+• The local method of collecting keyboard timing and physical key distance information without storing the actual typed text. 
+• The privacy first event flow where active window checks happen before events enter the typing analysis pipeline. 
+• The use of a personal latency baseline together with high latency transition detection. 
+• The combination of pause aware kinematic analysis, K-Means clustering and keyboard heatmap generation in one local application. 
+• The local storage and processing design in which window titles are not retained as plain text. 
+©VIT IPR&TTCELL  
+  
+                                 Invention 
+Disclosure Format (IDF)-B    
+ 
+Document No.  
+02-IPR-R003  
+Issue No/Date  
+2/01.02.2024  
+Amd. No/Date  
+0/00.00.0000  
+  
+ 
+
+
+--- PAGE 3 ---
+ 
+10. What is Technology readiness level of your invention?  
+  
+ 
+Research  
+ 
+Development   
+ 
+Deployment  
+TRL 1  
+TRL 2  
+TRL 3  
+TRL 4  
+TRL 5  
+TRL 6  
+TRL 7  
+TRL 8  
+TRL 9  
+Basic  
+Principles  
+observed  
+Technology 
+concept 
+formulated  
+Experimental 
+proof of 
+concept  
+Technology 
+validated in a 
+lab  
+Technology  
+validated in a 
+relevant  
+environment  
+(industrially 
+relevant in  
+case of key 
+enabling 
+technologies)  
+Technology 
+demonstrated 
+in a relevant  
+environment  
+(industrially 
+relevant in  
+case of key 
+enabling 
+technologies)  
+System 
+prototype  
+demonstration in 
+an  
+operational 
+environment  
+System 
+complete 
+and 
+qualified  
+Actual system 
+proven in an 
+operational  
+environment  
+(competitive 
+manufacturing  
+in case of key 
+enabling  
+technologies, or 
+in space )  
+  
+  
+  
+  
+  
+✓  
+  
+  
+  
+ 
+ 
+----------------------END OF THE DOCUMENT----------------------------- 
+
+
